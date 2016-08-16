@@ -1,0 +1,19 @@
+{
+  "name": "bikerack",
+  "version": "0.0.0",
+  "description": "a bicycle configuration manager",
+  "repository": "gitlab:petejh/bikerack",
+  "private": true,
+  "engines": {
+    "node": "6.3.1"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "",
+  "contributors": [
+    "Pete Hinckley <petejh-200.59@q.com>",
+    "Alex Votry <alexvotry@gmail.com>"
+  ],
+  "license": "UNLICENSED"
+}
+

@@ -15,7 +15,10 @@
 # ignore temporary files
 tmp/
 log/
+*.log
 
 # ignore extracted vendor components
 node_modules/
+bower_components/
+public/lib/
 

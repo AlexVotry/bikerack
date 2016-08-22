@@ -27,6 +27,47 @@ The required version of Node.js is specified in [.nvmrc](./.nvmrc) in the projec
 ~/bikerack$ nvm install
 ```
 
+### Install the JRE
+The [Selenium Standalone Server][selenium] used in our feature tests requires the [Java
+Runtime Environment (JRE)][jre]. Verify that the JRE is available on your system with:
+```shell
+~$ java -version
+```
+
+To install the JRE on a Debian-based system, you may use:
+```shell
+~$ sudo apt-get update
+~$ sudo apt-get install --no-install-recommends default-jre
+```
+
+### Install PhantomJS
+[PhantomJS][phantomjs] is a headless WebKit browser, which does not require, for example, Qt or a running X server. You can download the latest static build, but the version available through your system package manager may be sufficient. On Debian-based systems, including Ubuntu:
+```shell
+~$ sudo apt-get update
+~$ apt-cache showpkg phantomjs          # we recommend version 2.1.1
+~$ sudo apt-get install -y phantomjs
+```
+
+Otherwise, select a version from the [upstream source][phantomjs-source]. For example, on a Debian-based, 64-bit system:
+```shell
+~$ PHANTOMJS_VER='2.1.1'
+~$ PHANTOMJS="phantomjs-$PHANTOMJS_VER-linux-x86_64"
+~$ wget https://bitbucket.org/ariya/phantomjs/downloads/$PHANTOMJS.tar.bz2
+~$ tar -xvjpf $PHANTOMJS.tar.bz2
+~$ sudo chown -R root:staff $PHANTOMJS
+~$ sudo mv $PHANTOMJS /usr/local/lib
+
+# Link to the binary from a convenient location in your $PATH
+~$ sudo ln -s /usr/local/lib/$PHANTOMJS/bin/phantomjs /usr/local/bin/phantomjs
+
+# Verify the installation was successful
+~$ which phantomjs        # <- /usr/local/bin/phantomjs
+~$ phantomjs --version    # <- 2.1.1
+
+# Note that the static binary depends on Fontconfig. You may need to do:
+~$ sudo apt-get update && sudo apt-get install -y libfontconfig
+```
+
 ### Install Gulp CLI
 We automate development and build tasks with [gulp][gulp]. The command line
 interface, which needs to be installed as a system utility, is provided
@@ -41,7 +82,8 @@ the old version doesn't collide with the new gulp-cli package.
 
 ### Bootstrap the project
 ```shell
-~/bikerack$ npm install        # install required modules
+~/bikerack$ npm install                                   # install required modules
+~/bikerack$ $(npm bin)/webdriver-manager update    # install Selenium Server
 ```
 
 ---
@@ -52,7 +94,11 @@ the old version doesn't collide with the new gulp-cli package.
 [gitconfig]: https://git-scm.com/docs/git-config
 [gulp]: https://github.com/gulpjs/gulp
 [gulpcli]: https://github.com/gulpjs/gulp-cli
+[jre]: http://openjdk.java.net
 [nvm]: https://github.com/creationix/nvm
 [petejh]: mailto://petejh-200.59@q.com
+[phantomjs]: http://phantomjs.org
+[phantomjs-source]: http://phantomjs.org/download.html
 [repo]: https://gitlab.com/petejh/bikerack
+[selenium]: http://docs.seleniumhq.org/docs/03_webdriver.jsp
 

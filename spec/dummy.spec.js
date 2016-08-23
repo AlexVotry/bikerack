@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-describe('mocha test runner', () => {
+describe.skip('mocha test runner', () => {
 
   // passing test
   it('knows the truth when it sees it', () => {

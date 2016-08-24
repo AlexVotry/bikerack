@@ -1,6 +1,8 @@
 {
   "name": "bikerack",
   "description": "a bicycle configuration manager",
-  "devDependencies": {}
+  "devDependencies": {
+    "angular": "1.5.8"
+  }
 }
 

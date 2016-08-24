@@ -16,7 +16,7 @@ gulp.task('mocha', () => {
 });
 
 gulp.task('protractor', () => {
-  gulp.src(['spec/features/**/*feature'])
+  gulp.src(['spec/features/**/*feature'], { read: false })
     .pipe(protractor({
       configFile: './protractor.config.js',
       args: ['--baseUrl', 'http://127.0.0.1:3000']

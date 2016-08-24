@@ -82,8 +82,21 @@ the old version doesn't collide with the new gulp-cli package.
 
 ### Bootstrap the project
 ```shell
-~/bikerack$ npm install                                   # install required modules
+~/bikerack$ npm install                            # install vendor modules
 ~/bikerack$ $(npm bin)/webdriver-manager update    # install Selenium Server
+~/bikerack$ $(npm bin)/bower install               # install client-side libs
+```
+
+### Run the test suite
+The feature specs need to find a running application server. Open two terminal
+sessions and do:
+```shell
+# Start the application server in the first terminal
+~/bikerack$ bin/www
+
+# Run the tests in the second terminal
+~/bikerack$ gulp protractor        # feature specs
+~/bikerack$ gulp test              # unit and integration tests
 ```
 
 ---

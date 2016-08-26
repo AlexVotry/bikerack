@@ -8,3 +8,7 @@ Feature: Application identity
     When I visit the home page
     Then I see the name of the application
 
+  Scenario: Welcome message
+    Given the application has a home page
+    When I visit the home page
+    Then I see a welcome message

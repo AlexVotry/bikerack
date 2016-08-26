@@ -12,5 +12,9 @@ module.exports = function() {
   this.Then(/^I see the name of the application$/, function() {
     return this.expect(browser.getTitle()).to.eventually.be.equal('bikerack');
   });
-}
 
+  this.Then(/^I see a welcome message$/, function() {
+    return this.expect(element(by.id('welcome')).getText()).to.eventually.be.equal('Welcome!');
+  });
+
+}

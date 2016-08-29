@@ -3,6 +3,7 @@
 import gulp from 'gulp';
 import mocha from 'gulp-mocha';
 import { protractor } from 'gulp-protractor';
+import nodemon from 'gulp-nodemon';
 
 gulp.task('default', () => {
   console.log('<gulp>... It works!');
@@ -24,3 +25,11 @@ gulp.task('protractor', () => {
     .on('error', (e) => { throw e });
 });
 
+gulp.task('start', () => {
+  nodemon({
+    script: 'bin/www',
+    ext: 'js html',
+    ignore: ['spec/', 'public/lib/', 'tmp', 'protractor.config.js'],
+    env: { 'NODE_ENV': 'development' }
+  });
+});

@@ -92,7 +92,7 @@ The feature specs need to find a running application server. Open two terminal
 sessions and do:
 ```shell
 # Start the application server in the first terminal
-~/bikerack$ bin/www
+~/bikerack$ gulp start
 
 # Run the tests in the second terminal
 ~/bikerack$ gulp protractor        # feature specs

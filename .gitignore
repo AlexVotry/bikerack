@@ -22,3 +22,7 @@ node_modules/
 bower_components/
 public/lib/
 
+# ignore build directories
+api/
+dist/
+

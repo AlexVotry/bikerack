@@ -1,0 +1,16 @@
+{
+  "ext": "js, json",
+  "ignore": [
+    "bower.json",
+    "gulpfile.babel.js",
+    "karma.conf.js",
+    "node_modules",
+    "package.json",
+    "protractor.config.js",
+    "public/lib/",
+    "spec/",
+    "tmp/"
+  ],
+  "env": { "NODE_ENV": "development" }
+}
+

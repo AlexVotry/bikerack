@@ -30,6 +30,11 @@
     "gulp-nodemon": "2.1.0",
     "gulp-protractor": "3.0.0",
     "gulp-remember": "0.3.1",
+    "karma": "1.2.0",
+    "karma-chai": "0.1.0",
+    "karma-mocha": "1.1.1",
+    "karma-mocha-reporter": "2.1.0",
+    "karma-phantomjs-launcher": "1.0.2",
     "protractor-cucumber-framework": "0.6.0",
     "supertest": "2.0.0",
     "supertest-as-promised": "4.0.0"

@@ -9,6 +9,7 @@ import nodemon from 'gulp-nodemon';
 import path from 'path';
 import { protractor } from 'gulp-protractor';
 import remember from 'gulp-remember';
+import { Server } from 'karma';
 
 const opts = {
   spec: {
@@ -37,11 +38,38 @@ gulp.task('default', () => {
   console.log('<gulp>... It works!');
 });
 
-gulp.task('test', ['mocha', 'protractor']);
+gulp.task('test', ['mocha', 'karma', 'protractor']);
 
 gulp.task('mocha', () => {
   gulp.src(opts.spec.tests, { read: false })
     .pipe(mocha({ reporter: 'spec' }));
+});
+
+gulp.task('karma', (done) => {
+
+  const configFile = path.join(__dirname, 'karma.conf.js');
+
+  //new Server({
+  //  configFile: __dirname + '/karma.conf.js',
+  //  singleRun: true
+  //}, done).start();
+
+  // https://github.com/karma-runner/karma/issues/1788
+  // https://github.com/karma-runner/gulp-karma/pull/23
+  let server = new Server({
+    configFile: configFile,
+    singleRun: true
+  });
+
+  server.on('run_complete', (browsers, results) => {
+    if (results.error || results.failed) {
+      done(new Error('There are test failures'));
+    } else {
+      done();
+    }
+  });
+
+  server.start();
 });
 
 gulp.task('protractor', () => {

@@ -16,10 +16,16 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     // !! CAUTION: file globs are expanded to include matching files in alphabetical order !!
     files: [
-      'spec/bogus.spec.js',
       'dist/lib/angular/angular.js',
       'public/lib/angular-mocks/angular-mocks.js',
-      'dist/lib/angular-ui-router/release/angular-ui-router.js'
+      'dist/lib/angular-ui-router/release/angular-ui-router.js',
+      'dist/app.js',
+      'dist/app.constants.js',
+      'dist/app.config.js',
+      'dist/core/core.module.js',
+      'dist/core/auth-token.constants.js',
+      'dist/core/auth-token.service.js',
+      'dist/core/auth-token.service.spec.js'
     ],
 
 

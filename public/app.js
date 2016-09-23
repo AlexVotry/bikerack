@@ -1,7 +1,10 @@
-(function() {
-  'use strict';
+'use strict';
 
-  angular
-    .module('bikerack', []);
+(function() {
+
+  angular.module('app',
+    [ 'core'
+    ]);
+
 })();
 

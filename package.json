@@ -35,7 +35,10 @@
     "karma-mocha": "1.1.1",
     "karma-mocha-reporter": "2.1.0",
     "karma-phantomjs-launcher": "1.0.2",
+    "karma-sinon-chai": "1.2.4",
     "protractor-cucumber-framework": "0.6.0",
+    "sinon": "1.17.6",
+    "sinon-chai": "2.8.0",
     "supertest": "2.0.0",
     "supertest-as-promised": "4.0.0"
   },
@@ -46,3 +49,4 @@
     "test": "gulp test"
   }
 }
+

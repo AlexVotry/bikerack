@@ -6,6 +6,10 @@
     <link rel='icon' href=''>
   </head>
   <body>
+    <nav ng-controller='NavController as nav'>
+      <p id='current-user'>{{ nav.currentUser.name }}</p>
+    </nav>
+
     <h1 id="welcome">Welcome!</h1>
     <p>a bicycle configuration manager</p>
 
@@ -28,6 +32,8 @@
     <script src="./core/core.module.js"></script>
     <script src="./core/auth-token.constants.js"></script>
     <script src="./core/auth-token.service.js"></script>
+    <script src="./nav/nav.module.js"></script>
+    <script src="./nav/nav.controller.js"></script>
     <script src="./signup/signup.module.js"></script>
     <script src="./signup/signup.service.js"></script>
     <script src="./signup/signup.controller.js"></script>

@@ -25,6 +25,8 @@ module.exports = function(config) {
       'dist/session/session.module.js',
       'dist/session/auth-interceptor.service.js',
       'dist/session/auth-interceptor.service.spec.js',
+      'dist/session/session.service.js',
+      'dist/session/session.service.spec.js',
       'dist/core/core.module.js',
       'dist/core/auth-token.constants.js',
       'dist/core/auth-token.service.js',

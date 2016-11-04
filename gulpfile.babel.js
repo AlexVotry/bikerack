@@ -29,7 +29,8 @@ const opts = {
     builddir: 'dist/',
     assets: [
       'public/**/*.html',
-      'public/**/angular.js'
+      'public/**/angular.js',
+      'public/**/angular-ui-router.js'
     ]
   }
 };

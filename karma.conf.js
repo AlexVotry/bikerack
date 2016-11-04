@@ -14,8 +14,12 @@ module.exports = function(config) {
 
 
     // list of files / patterns to load in the browser
+    // !! CAUTION: file globs are expanded to include matching files in alphabetical order !!
     files: [
-      'spec/bogus.spec.js'
+      'spec/bogus.spec.js',
+      'dist/lib/angular/angular.js',
+      'public/lib/angular-mocks/angular-mocks.js',
+      'dist/lib/angular-ui-router/release/angular-ui-router.js'
     ],
 
 

@@ -10,6 +10,8 @@
       <p id='current-user'>{{ nav.currentUser.name }}</p>
     </nav>
 
+    <div ui-view></div>
+
     <h1 id="welcome">Welcome!</h1>
     <p>a bicycle configuration manager</p>
 
@@ -34,6 +36,9 @@
     <script src="./core/auth-token.service.js"></script>
     <script src="./nav/nav.module.js"></script>
     <script src="./nav/nav.controller.js"></script>
+    <script src="./dashboard/dashboard.module.js"></script>
+    <script src="./dashboard/dashboard.route.js"></script>
+    <script src="./dashboard/dashboard.controller.js"></script>
     <script src="./signup/signup.module.js"></script>
     <script src="./signup/signup.service.js"></script>
     <script src="./signup/signup.controller.js"></script>

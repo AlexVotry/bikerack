@@ -3,7 +3,11 @@
 (function() {
 
   var API =
-    { jwtKey: 'bikerackJWT'
+    { url: ''
+    , endpoint:
+      { signup: '/api/v1/signup'
+      }
+    , jwtKey: 'bikerackJWT'
     }
     ;
 

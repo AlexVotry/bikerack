@@ -25,7 +25,12 @@ module.exports = function(config) {
       'dist/core/core.module.js',
       'dist/core/auth-token.constants.js',
       'dist/core/auth-token.service.js',
-      'dist/core/auth-token.service.spec.js'
+      'dist/core/auth-token.service.spec.js',
+      'dist/signup/signup.module.js',
+      'dist/signup/signup.service.js',
+      'dist/signup/signup.service.spec.js',
+      'dist/signup/signup.controller.js',
+      'dist/signup/signup.controller.spec.js'
     ],
 
 

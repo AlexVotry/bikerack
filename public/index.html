@@ -9,6 +9,14 @@
     <h1 id="welcome">Welcome!</h1>
     <p>a bicycle configuration manager</p>
 
+    <a href="#sign-in-form">Sign Up</a>
+
+    <form id="sign-in-form" ng-controller="SignUpController as signup" ng-submit="signup.register()">
+      <input type="text" id="username" ng-model="signup.credentials.username">
+      <input type="password" id="password" ng-model="signup.credentials.password">
+      <button type="submit">Submit</button>
+    </form>
+
     <script src="./lib/angular/angular.js"></script>
     <script src="./lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="./app.js"></script>
@@ -17,6 +25,9 @@
     <script src="./core/core.module.js"></script>
     <script src="./core/auth-token.constants.js"></script>
     <script src="./core/auth-token.service.js"></script>
+    <script src="./signup/signup.module.js"></script>
+    <script src="./signup/signup.service.js"></script>
+    <script src="./signup/signup.controller.js"></script>
   </body>
 </html>
 

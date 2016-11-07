@@ -13,7 +13,7 @@ import { Server } from 'karma';
 
 const opts = {
   spec: {
-    tests: 'spec/**/*spec.js',
+    tests: 'app/**/*spec.js',
     features: 'spec/features/**/*.feature'
   },
   server: {
@@ -126,6 +126,7 @@ gulp.task('start', ['watch', 'babel-server'], () => {
   let stream = nodemon({
                  script: opts.server.runner,
                  watch: opts.server.sourcedir,
+                 ignore: 'app/**/*spec.js',
                  tasks: ['babel-server']
                });
   return stream;

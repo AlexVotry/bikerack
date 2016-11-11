@@ -2,14 +2,14 @@
 
 (function() {
 
-  var API =
-    { url: ''
-    , endpoint:
-      { signup: '/api/v1/signup'
-      }
-    , jwtKey: 'bikerackJWT'
-    }
-    ;
+  var API = {
+    url: '',
+    endpoint: {
+      login: '/api/v1/login',
+      signup: '/api/v1/signup'
+    },
+    jwtKey: 'bikerackJWT'
+  };
 
   angular
     .module('app')
@@ -17,4 +17,3 @@
     ;
 
 })();
-

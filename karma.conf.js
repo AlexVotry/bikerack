@@ -39,6 +39,10 @@ module.exports = function(config) {
       'dist/nav/nav.controller.js',
       'dist/nav/nav.controller.spec.js',
       'dist/signup/signup.module.js',
+      'dist/signup/login.service.js',
+      'dist/signup/login.service.spec.js',
+      'dist/signup/login.controller.js',
+      'dist/signup/login.controller.spec.js',
       'dist/signup/signup.service.js',
       'dist/signup/signup.service.spec.js',
       'dist/signup/signup.controller.js',
@@ -94,4 +98,3 @@ module.exports = function(config) {
     concurrency: Infinity
   })
 }
-

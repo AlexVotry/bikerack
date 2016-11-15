@@ -49,7 +49,20 @@ describe('SignUpController', function() {
     expect($location.path()).to.be.equal('/dashboard');
   }));
 
+  it('broadcasts a success message', function() {
+    var broadcast = sinon.spy(rootScope, '$broadcast');
+
+    controller.credentials = {
+      username: 'abner',
+      password: 'pass1234'
+    };
+
+    controller.register();
+    rootScope.$apply();
+
+    expect(broadcast).to.have.been.calledWith('RegistrationSuccess');
+  });
+
   xit('does not register a new user with invalid credentials', function() {
   });
 });
-

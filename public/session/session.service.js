@@ -10,8 +10,9 @@
   function SessionService(AuthToken) {
 
     return {
-      currentUser: currentUser
-    }
+      currentUser: currentUser,
+      logout: logout
+    };
 
     // TODO: check first to see if we already know who the current user is
     function currentUser() {
@@ -21,7 +22,10 @@
       }
       return;
     }
+
+    function logout() {
+      AuthToken.erase();
+    }
   }
 
 })();
-

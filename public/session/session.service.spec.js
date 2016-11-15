@@ -17,8 +17,11 @@ describe('SessionService', function() {
             return;
           }
           return payload;
+        },
+        erase: function() {
+          payload = {};
         }
-      }
+      };
     }
   }));
 
@@ -47,6 +50,13 @@ describe('SessionService', function() {
 
       expect(user.name).to.be.equal(payload.user.name);
     });
+
+    it('logs the user out', function() {
+      payload = { user: { name: 'Abner', id: 2 } };
+
+      SessionService.logout();
+
+      expect(SessionService.currentUser()).to.be.empty;
+    });
   });
 });
-

@@ -8,16 +8,15 @@
   <body>
     <nav ng-controller='NavController as nav'>
       <p id='current-user'>{{ nav.currentUser.name }}</p>
+      <a id="signup-link" ng-hide="nav.isLoggedIn" href="#sign-in-form">Sign Up</a><br>
+      <a id="login-link" ng-hide="nav.isLoggedIn" href="#log-in-form">Log In</a><br>
+      <button id="logout-link" ng-show="nav.isLoggedIn" ng-click="nav.logout()">Log Out</button>
     </nav>
 
     <div ui-view></div>
 
     <h1 id="welcome">Welcome!</h1>
     <p>a bicycle configuration manager</p>
-
-    <a href="#sign-in-form">Sign Up</a><br>
-    <a href="#">Log In</a><br>
-    <button>Log Out</button>
 
     <form id="sign-in-form" ng-controller="SignUpController as signup" ng-submit="signup.register()">
       <input type="text" id="username" ng-model="signup.credentials.username">

@@ -1,7 +1,6 @@
 describe('NavController', function() {
 
   var controller
-    , rootScope
     , user = {}
     ;
 
@@ -12,7 +11,8 @@ describe('NavController', function() {
 
     function SessionService() {
       return {
-        currentUser: function() { return user; }
+        currentUser: function() { return user; },
+        logout: function() { user = {}; }
       };
     }
   }));
@@ -33,7 +33,24 @@ describe('NavController', function() {
     expect(controller.currentUser.name).to.equal(user.name);
   });
 
-  //it('has an empty username when the user logs out');
+  it('has an empty username when the user logs out', function() {
+    angular.extend(user, { name: 'abner_surlyman' });
+
+    controller.logout();
+
+    expect(controller.currentUser).to.be.empty;
+  });
+
+  it('knows there is a user logged in', function() {
+    angular.extend(user, { name: 'abner_surlyman' });
+
+    expect(controller.isLoggedIn).to.be.true;
+  });
+
+  it('knows there is not a user logged in', function() {
+    controller.logout();
+
+    expect(controller.isLoggedIn).to.be.false;
+  });
 
 });
-

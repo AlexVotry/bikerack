@@ -10,8 +10,8 @@ exports.config = {
   cucumberOpts: {
     require: [
       'spec/features/steps/steps.js',
+      'spec/features/steps/bike-steps.js',
       'spec/features/support/world.js'
     ]
   }
 };
-

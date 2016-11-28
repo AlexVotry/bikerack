@@ -104,4 +104,14 @@ module.exports = function() {
     return this.expect(indexPage.logoutLink.isDisplayed()).to.eventually.be.false;
   });
 
+  this.When(/^I visit my dashboard$/, function() {
+    return 'pending';
+    // return dashboardPage.go();
+  });
+
+  this.Then(/^I see a list of my bikes$/, function() {
+    return 'pending';
+    // return this.expect( /* find my bike list */ );
+  });
+
 };

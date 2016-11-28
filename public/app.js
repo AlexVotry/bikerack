@@ -3,7 +3,8 @@
 (function() {
 
   angular.module('app',
-    [ 'core'
+    [ 'bikes'
+    , 'core'
     , 'dashboard'
     , 'nav'
     , 'session'
@@ -11,4 +12,3 @@
     ]);
 
 })();
-

@@ -104,14 +104,26 @@ module.exports = function() {
     return this.expect(indexPage.logoutLink.isDisplayed()).to.eventually.be.false;
   });
 
-  this.When(/^I visit my dashboard$/, function() {
-    return 'pending';
-    // return dashboardPage.go();
-  });
+  // this.When(/^I visit my dashboard$/, function() {
+  //   return 'pending';
+  //   // return dashboardPage.go();
+  // });
 
   this.Then(/^I see a list of my bikes$/, function() {
     return 'pending';
     // return this.expect( /* find my bike list */ );
+  });
+
+  this.Given(/^I am not logged in$/, function() {
+    indexPage.go();
+    indexPage.logout();
+    return;
+  });
+  this.When(/^I visit my dashboard$/, function() {
+    return browser.get('#/dashboard');
+  });
+  this.Then(/^I do not see my dashboard$/, function() {
+    return this.expect(browser.getLocationAbsUrl()).not.to.eventually.match(/\/dashboard$/);
   });
 
 };

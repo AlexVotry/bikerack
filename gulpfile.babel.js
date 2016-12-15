@@ -43,7 +43,19 @@ gulp.task('test', ['mocha', 'karma', 'protractor']);
 
 gulp.task('mocha', () => {
   gulp.src(opts.spec.tests, { read: false })
-    .pipe(mocha({ reporter: 'spec' }));
+    .pipe(mocha({ reporter: 'spec' }))
+
+    // fix an issue where gulp-mocha can hang
+    // https://github.com/sindresorhus/gulp-mocha/issues/54
+    // https://github.com/sindresorhus/gulp-mocha/pull/73
+
+    .once('error', function () {
+      console.log('mocha reported an error');
+      process.exit(1);
+    })
+    .once('end', function () {
+      process.exit();
+    });
 });
 
 gulp.task('karma', (done) => {

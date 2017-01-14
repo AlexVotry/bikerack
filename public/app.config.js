@@ -6,6 +6,7 @@
     .module('app')
     .config(configureAuthTokenService)
     .config(configureSignUpService)
+    .config(configureAuthInterceptor)
     ;
 
   configureAuthTokenService.$inject = ['AuthTokenProvider', 'API'];
@@ -19,5 +20,9 @@
     SignUpServiceProvider.setEndpoint(API.endpoint.signup);
   }
 
-})();
+  configureAuthInterceptor.$inject = ['$httpProvider'];
+  function configureAuthInterceptor($httpProvider) {
+    $httpProvider.interceptors.push('AuthInterceptor');
+  }
 
+})();

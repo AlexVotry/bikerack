@@ -1,0 +1,4 @@
+#!/bin/bash
+
+mongoimport --db bikeTest --collection user --upsert --file /home/ubuntu/workspace/bikerack/seeds/users.json
+mongoimport --db bikeTest --collection bike --upsert --file /home/ubuntu/workspace/bikerack/seeds/bikes.json

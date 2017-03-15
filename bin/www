@@ -1,9 +1,16 @@
 #!/usr/bin/env node
 
 const app = require('../api/app');
+const db = require('../api/db');
 const port = process.env.PORT || 3000;
 
-app.listen(port, function() {
-  console.log(`Listening on port ${ port }... [Press Ctrl-c to exit]`);
-});
-
+db.connect()
+  .then(function() {
+    app.listen(port, function() {
+      console.log(`Listening on port ${ port }... [Press Ctrl-c to exit]`);
+    });
+  })
+  .catch(function(err) {
+    console.log('unable to connect to the database...exiting: ', err);
+    process.exit(1);
+  });

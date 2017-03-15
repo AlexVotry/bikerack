@@ -2,37 +2,29 @@
 
 import express from 'express';
 
+import auth from './authenticate';
+
 const login = express.Router();
 const signup = express.Router();
 
 signup.post('/', function(request, response) {
-  let username = request.body.username;
+  let credentials = request.body.credentials;
 
-  let user = { user: { name: username, id: 2 } };
-
-  let payload = JSON.stringify(user);
-  let encodedPayload = Buffer(payload).toString('base64');
-
-  let token = ['header', encodedPayload, 'signature'].join('.');
-
-  response
-    .status(201)
-    .json({ token: token });
+  auth.register(credentials).then(function(token) {
+    response
+      .status(201)
+      .json({ token: token });
+  });
 });
 
 login.post('/', function(request, response) {
-  let username = request.body.username;
+  let credentials = request.body.credentials;
 
-  let user = { user: { name: username, id: 2 } };
-
-  let payload = JSON.stringify(user);
-  let encodedPayload = Buffer(payload).toString('base64');
-
-  let token = ['header', encodedPayload, 'signature'].join('.');
-
-  response
-    .status(201)
-    .json({ token: token });
+  auth.verify(credentials).then(function(token) {
+    response
+      .status(201)
+      .json({ token: token });
+  });
 });
 
 module.exports = {

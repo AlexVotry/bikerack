@@ -6,6 +6,7 @@ import path from 'path';
 
 import auth from './authenticate/authenticate';
 import {signup, login} from './authenticate/authenticate.route';
+import bikes from './bikes/bikes.route';
 
 const app = express();
 
@@ -32,5 +33,7 @@ app.use(function(request, response, next) {
     response.sendStatus(403);
   }
 });
+
+app.use('/api/v1/bikes', bikes);
 
 module.exports = app;

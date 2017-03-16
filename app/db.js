@@ -2,9 +2,6 @@
 
 import { MongoClient as Mongo } from 'mongodb';
 
-// TODO: fetch this url from a config file
-const mongoUrl = 'mongodb://localhost:27017/bikerack';
-
 let singleton = null;
 
 class Db {
@@ -13,7 +10,7 @@ class Db {
     singleton = singleton || this;
 
     this.db = null;
-    this.url = mongoUrl;
+    this.url = process.env.DB_PATH + process.env.DB;
 
     return singleton;
   }

@@ -2,6 +2,11 @@
 
 import { expect } from 'chai';
 import Db from './db';
+import dotenv from 'dotenv';
+import path from 'path';
+
+let env_file = path.join(__dirname, "../project.env");
+dotenv.config({ path: env_file });
 
 describe('module db', function() {
 

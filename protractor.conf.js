@@ -1,5 +1,6 @@
 exports.config = {
   framework: 'custom',
+  rootElement: '[ng-app]',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   capabilities: {
     browserName: 'phantomjs',

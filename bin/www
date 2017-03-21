@@ -4,6 +4,12 @@ const app = require('../api/app');
 const Db = require('../api/db');
 const port = process.env.PORT || 3000;
 
+const dotenv = require('dotenv');
+const path = require('path');
+
+let env_file = path.join(__dirname, "../project.env");
+dotenv.config({ path: env_file });
+
 // Db.default() is created during transpilation
 var db = new Db.default();
 

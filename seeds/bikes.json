@@ -1,0 +1,6 @@
+{ "_id" : { "$oid" : "58c754c69c97bde77d213c68" }, "user_id" : { "$oid" : "58c7502be4aa064e13f594de" }, "name" : "Roady", "model" : "Schwinn" }
+{ "_id" : { "$oid" : "58c7559d9c97bde77d213c6a" }, "user_id" : { "$oid" : "58c75050e4aa064e13f594df" }, "name" : "Townie", "model" : "Trek" }
+{ "_id" : { "$oid" : "58c755f39c97bde77d213c6b" }, "user_id" : { "$oid" : "58c75067e4aa064e13f594e0" }, "name" : "Cross", "model" : "Redline" }
+{ "_id" : { "$oid" : "58c756ce9c97bde77d213c6c" }, "user_id" : { "$oid" : "58c75050e4aa064e13f594df" }, "name" : "Mountain", "model" : "Specialized" }
+{ "_id" : { "$oid" : "58c756fd9c97bde77d213c6d" }, "user_id" : { "$oid" : "58c75050e4aa064e13f594df" }, "name" : "Track", "model" : "Felt" }
+{ "_id" : { "$oid" : "58c758db9c97bde77d213c6e" }, "user_id" : { "$oid" : "58c7502be4aa064e13f594de" }, "name" : "Track", "model" : "Felt" }

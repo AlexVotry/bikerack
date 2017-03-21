@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -f "/home/ubuntu/workspace/bikerack/project.env" ]; then
+  . "/home/ubuntu/workspace/bikerack/project.env"
+fi
+
+mongoimport --db $DB --collection user --upsert --file $HOMEPATH/seeds/users.json
+mongoimport --db $DB --collection bike --upsert --file $HOMEPATH/seeds/bikes.json

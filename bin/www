@@ -1,9 +1,25 @@
 #!/usr/bin/env node
 
-const app = require('../app/app');
+const app = require('../api/app');
+const Db = require('../api/db');
 const port = process.env.PORT || 3000;
 
-app.listen(port, function() {
-  console.log(`Listening on port ${ port }... [Press Ctrl-c to exit]`);
-});
+const dotenv = require('dotenv');
+const path = require('path');
 
+let env_file = path.join(__dirname, "../project.env");
+dotenv.config({ path: env_file });
+
+// Db.default() is created during transpilation
+var db = new Db.default();
+
+db.connect()
+  .then(function() {
+    app.listen(port, function() {
+      console.log(`Listening on port ${ port }... [Press Ctrl-c to exit]`);
+    });
+  })
+  .catch(function(err) {
+    console.log('unable to connect to the database...exiting: ', err);
+    process.exit(1);
+  });

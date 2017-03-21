@@ -1,0 +1,7 @@
+mongod --bind_ip=$IP --dbpath=/home/ubuntu/workspace/data --nojournal --rest "$@"
+
+## settings for c9.io
+# --dbpath=/home/ubuntu/workspace/data : Because it defaults to /var/db (which isn't accessible)
+# --nojournal : Because mongodb usually pre-allocates 2 GB journal file (which exceeds Cloud9 disk space quota)
+# --bind_ip=$IP : Because you can't bind to 0.0.0.0
+# --rest : Runs on default port 27017 (and 28017 for admin web console)

@@ -1,5 +1,6 @@
 exports.config = {
   framework: 'custom',
+  rootElement: '[ng-app]',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   capabilities: {
     browserName: 'phantomjs',
@@ -9,8 +10,8 @@ exports.config = {
   cucumberOpts: {
     require: [
       'spec/features/steps/steps.js',
+      'spec/features/steps/bike-steps.js',
       'spec/features/support/world.js'
     ]
   }
 };
-

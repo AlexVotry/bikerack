@@ -2,7 +2,11 @@
   "name": "bikerack",
   "description": "a bicycle configuration manager",
   "devDependencies": {
-    "angular": "1.5.8"
+    "angular-mocks": "1.5.8"
+  },
+  "dependencies": {
+    "angular": "1.5.8",
+    "angular-ui-router": "0.3.1"
   }
 }
 

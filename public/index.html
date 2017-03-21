@@ -1,12 +1,58 @@
 <!DOCTYPE html>
-<html ng-app="bikerack">
+<html lang="en" ng-app="app">
   <head>
     <title>bikerack</title>
+
+    <link rel='icon' href=''>
   </head>
   <body>
+    <nav ng-controller='NavController as nav'>
+      <p id='current-user'>{{ nav.currentUser.name }}</p>
+      <a id="signup-link" ng-hide="nav.isLoggedIn" href="#sign-in-form">Sign Up</a><br>
+      <a id="login-link" ng-hide="nav.isLoggedIn" href="#log-in-form">Log In</a><br>
+      <button id="logout-link" ng-show="nav.isLoggedIn" ng-click="nav.logout()">Log Out</button>
+    </nav>
+
+    <div ui-view></div>
+
+    <h1 id="welcome">Welcome!</h1>
     <p>a bicycle configuration manager</p>
 
+    <form id="sign-in-form" ng-controller="SignUpController as signup" ng-submit="signup.register()">
+      <input type="text" id="username" ng-model="signup.credentials.username">
+      <input type="password" id="password" ng-model="signup.credentials.password">
+      <button type="submit">Submit</button>
+    </form>
+
+    <form id="log-in-form" ng-controller="LogInController as login" ng-submit="login.login()">
+      <input type="text" id="login-username" ng-model="login.credentials.username">
+      <input type="password" id="login-password" ng-model="login.credentials.password">
+      <button type="submit">Log In</button>
+    </form>
+
     <script src="./lib/angular/angular.js"></script>
+    <script src="./lib/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="./app.js"></script>
+    <script src="./app.constants.js"></script>
+    <script src="./app.config.js"></script>
+    <script src="./session/session.module.js"></script>
+    <script src="./session/auth-interceptor.service.js"></script>
+    <script src="./session/session.service.js"></script>
+    <script src="./bikes/bikes.module.js"></script>
+    <script src="./bikes/bikes.route.js"></script>
+    <script src="./bikes/bikes.controller.js"></script>
+    <script src="./core/core.module.js"></script>
+    <script src="./core/auth-token.constants.js"></script>
+    <script src="./core/auth-token.service.js"></script>
+    <script src="./nav/nav.module.js"></script>
+    <script src="./nav/nav.controller.js"></script>
+    <script src="./dashboard/dashboard.module.js"></script>
+    <script src="./dashboard/dashboard.route.js"></script>
+    <script src="./dashboard/dashboard.controller.js"></script>
+    <script src="./signup/signup.module.js"></script>
+    <script src="./signup/login.service.js"></script>
+    <script src="./signup/login.controller.js"></script>
+    <script src="./signup/signup.service.js"></script>
+    <script src="./signup/signup.controller.js"></script>
   </body>
 </html>

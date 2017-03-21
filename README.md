@@ -1,7 +1,7 @@
 # bikerack
 
 _A bicycle configuration manager_
-
+by Alex Votry and Pete Hinkley
 ---
 
 ## How to contribute
@@ -10,9 +10,9 @@ _A bicycle configuration manager_
 The canonical source for the project is a private repository hosted on [GitLab][repo]. Contact [petejh][] to request permissions to view or patch the source code.
 
 ### Download the source code
-Obtain a local copy of the complete source code from GitLab.
+Obtain a local copy of the complete source code from GitHub.
 ```shell
-~$ git clone git@gitlab.com:petejh/bikerack.git
+~$ git clone https://github.com/AlexVotry/bikerack.git
 ```
 
 ### Configure git

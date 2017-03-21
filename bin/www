@@ -1,8 +1,11 @@
 #!/usr/bin/env node
 
 const app = require('../api/app');
-const db = require('../api/db');
+const Db = require('../api/db');
 const port = process.env.PORT || 3000;
+
+// Db.default() is created during transpilation
+var db = new Db.default();
 
 db.connect()
   .then(function() {

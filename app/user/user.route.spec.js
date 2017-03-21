@@ -22,9 +22,9 @@ describe('user.route', function() {
       });
   });
 
-  it('knows the truth when it sees it', function() {
-    expect(true).to.be.true;
-  });
+  // xit('knows the truth when it sees it', function() {
+  //   expect(true).to.be.true;
+  // });
 
   afterEach(function() {
     return user.collection.remove();

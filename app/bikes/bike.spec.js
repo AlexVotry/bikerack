@@ -32,10 +32,6 @@ describe('Bike', function() {
     return bike.createMany(bikeList);
   });
 
-  it('knows the truth when it sees it', function() {
-    expect(true).to.be.true;
-  });
-
   it('gets the bikes owned by the user', function() {
     return bike.all()
       .then(function(bikes) {
